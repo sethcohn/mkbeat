@@ -1,5 +1,5 @@
 mkbeat.pl is a Perl script to take a beat description file
-and generate a corresponding beat bar using ASS subtitles.
+and generate a corresponding beat meter using ASS subtitles.
 
 Summary of Usage
 ================
@@ -66,6 +66,9 @@ per minute directly, or count full beats until a given point in the
 video and set it with "MID" (time in seconds) and "MIDNUM" (number of
 full beats until then).
 
+For tempo changes, enter "BREAK" on a line of its own. After this, set up
+the first beat and tempo as above.
+
 2. Beat bar
 
 The beat bar is defined by the "SOURCE" location (in ASS coordinates),
@@ -95,6 +98,14 @@ may be an arbitrary fraction as well.
 
 Optionally, after the SPEED may follow a space and any character or text you
 wish to use for this NUMBER of beats.
+
+To enter a repeating pattern, enter several SPEED values separated by commas,
+e.g. "8@1,1,1,2,2,1,1,1,4,4,4,4" defines a sequences of 3 full beats, 2 half
+beats, again 3 full beats and 4 quarter beat repeated 8 times. You may also
+follow this with markers to use for each beat. If not all characters are
+specified, the default mark will be used. For instance, "4@1,1,1,2,2 X,-,-,O,O"
+will display an "X" for the first beat of the sequence, two dashes for the next
+two beats and finally two "O" for the last two beats, all repeated four times.
 
 While timing the beats it is helpful to use a sequence of letters for each
 beat entry, so you can quickly see which line a particular beat subtitle
