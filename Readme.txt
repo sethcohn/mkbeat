@@ -107,6 +107,13 @@ specified, the default mark will be used. For instance, "4@1,1,1,2,2 X,-,-,O,O"
 will display an "X" for the first beat of the sequence, two dashes for the next
 two beats and finally two "O" for the last two beats, all repeated four times.
 
+Fractional beats can be entered either as fractional numbers (e.g. "0.5") or
+with the notation "4/3". Because mkbeat specifies the beat rate and not beat
+duration (i.e. a 2 means a half-beat, and 0.5 is a duration of two full beats),
+this may be somewhat unintuitive. For instance, "4/3" is a beat duration
+equivalent to 3 quarter beats, equivalent to a dotted eighth note in musical
+notation.
+
 While timing the beats it is helpful to use a sequence of letters for each
 beat entry, so you can quickly see which line a particular beat subtitle
 came from in the beat description file. Furthermore, the special code "\R"
